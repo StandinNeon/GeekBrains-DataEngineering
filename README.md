@@ -8,4 +8,4 @@
 
 [Методичка](https://docs.google.com/document/d/1ks8ps8guTJ9dcnqpaNcsVsH1uYykW-w1rSF16uso20o/edit)
 
-[Практическое задание]()
+[Практическое задание](https://github.com/StandinNeon/GeekBrains-DataEngineering/tree/ParsingScrapy/Homework/Lesson%201)
