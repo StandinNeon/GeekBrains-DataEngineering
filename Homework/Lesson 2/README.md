@@ -1,4 +1,8 @@
 ## Урок 2. Парсинг HTML. Библиотека Beautiful soup.
+
+[Код](https://github.com/StandinNeon/GeekBrains-DataEngineering/blob/ParsingScrapy/Homework/Lesson%202/code%201.py)
+[JSON](https://github.com/StandinNeon/GeekBrains-DataEngineering/blob/ParsingScrapy/Homework/Lesson%202/hhru.json)
+
 ### Необходимо собрать информацию о вакансиях на вводимую должность (используем input или через аргументы получаем должность) с сайтов HH(обязательно) и/или Superjob(по желанию). Приложение должно анализировать несколько страниц сайта (также вводим через input или аргументы). Получившийся список должен содержать в себе минимум:
 #### 1 Наименование вакансии.
 #### 2 Предлагаемую зарплату (разносим в три поля: минимальная и максимальная и валюта. цифры преобразуем к цифрам).
