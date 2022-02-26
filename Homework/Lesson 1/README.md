@@ -1,7 +1,7 @@
 ## Урок 1. Основы клиент-серверного взаимодействия. Работа с API
 
 ### 1. Посмотреть документацию к API GitHub, разобраться как вывести список репозиториев для конкретного пользователя, сохранить JSON-вывод в файле *.json.
-[Код]()
-[JSON файл]()
+[Код](https://github.com/StandinNeon/GeekBrains-DataEngineering/blob/ParsingScrapy/Homework/Lesson%201/code%201.py)
+[JSON файл](https://github.com/StandinNeon/GeekBrains-DataEngineering/blob/ParsingScrapy/Homework/Lesson%201/repos%201.json)
 ### 2. Изучить список открытых API (https://www.programmableweb.com/category/all/apis). Найти среди них любое, требующее авторизацию (любого типа). Выполнить запросы к нему, пройдя авторизацию. Ответ сервера записать в файл.
 #### Если нет желания заморачиваться с поиском, возьмите API вконтакте (https://vk.com/dev/first_guide). Сделайте запрос, чтобы получить список всех сообществ на которые вы подписаны.
