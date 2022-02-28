@@ -16,3 +16,10 @@
 [Методичка](https://docs.google.com/document/d/1mFxcdjP0NG6cFWDgNsPfzZxt_Nd9D0wWuJCf4ES-fJk/edit)
 
 [Практическое задание](https://github.com/StandinNeon/GeekBrains-DataEngineering/tree/ParsingScrapy/Homework/Lesson%202)
+
+## - Урок 3. Система управления базами данных MongoDB в Python
+[Урок](https://gb.ru/lessons/218461)
+
+[Методичка](https://docs.google.com/document/d/1OvtCj78OpTQDOmfoTGHMIZ2x-UonCT-PYiyRJ9--IO8/edit)
+
+[Практическое задание](https://github.com/StandinNeon/GeekBrains-DataEngineering/tree/ParsingScrapy/Homework/Lesson%203)
