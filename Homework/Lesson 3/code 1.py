@@ -20,83 +20,77 @@ response = requests.get(url, headers=headers, params = params)
 dom = BeautifulSoup(response.text, 'html.parser')
 items = dom.find_all('div', {'class': 'vacancy-serp-item vacancy-serp-item_redesigned'})
 
+items_added = 0
+items_not_added = 0
+vac_len = 0
+
 while True:
     for item in items:
         item_data ={}
         link_title = item.find('a',{'data-qa': 'vacancy-serp__vacancy-title'})
-        link = link_title['href']
-        title = link_title.getText()
-        company = ((item.find('a', {'data-qa': 'vacancy-serp__vacancy-employer'})).getText()).replace('\xa0', ' ')
-        location = (item.find('div', {'data-qa': 'vacancy-serp__vacancy-address'})).getText()
+        item_data['link'] = link_title['href']
+        item_data['title'] = link_title.getText()
+        item_data['company'] = ((item.find('a', {'data-qa': 'vacancy-serp__vacancy-employer'})).getText()).replace('\xa0', ' ')
+        item_data['location'] = (item.find('div', {'data-qa': 'vacancy-serp__vacancy-address'})).getText()
         compensation = item.find('span', {'data-qa': 'vacancy-serp__vacancy-compensation'})
         if type(compensation) == type(link_title):
             salary = (compensation.getText()).replace('\u202f', '')
-            salary_keyword = ''
+            item_data['salary_keyword'] = ''
             if 'от ' in salary:
-                salary_keyword = 'от '
+                item_data['salary_keyword'] = 'от '
             elif 'до ' in salary:
-                salary_keyword = 'до '
+                item_data['salary_keyword'] = 'до '
             else:
-                salary_keyword = None
+                item_data['salary_keyword'] = None
 
-            salary_from = ''
+            item_data['salary_from'] = ''
             while True:
                 if salary[0].isdigit() == True:
-                    salary_from = salary_from + salary[0]
+                    item_data['salary_from'] = item_data['salary_from'] + salary[0]
                     salary = salary[1:]
                 else:
                     salary = salary[1:]
-                if salary_from != '' and salary[0].isdigit() == False:
+                if item_data['salary_from'] != '' and salary[0].isdigit() == False:
                     break
-            salary_from = int(salary_from)
+            item_data['salary_from'] = int(item_data['salary_from'])
 
-            salary_to = ''
+            item_data['salary_to'] = ''
             while True:
                 for char in salary:
                     if char.isdigit() == True:
-                        salary_to = salary_to + char
+                        item_data['salary_to'] = item_data['salary_to'] + char
                 break
-            if salary_to != '':
-                salary_to = int(salary_to)
+            if item_data['salary_to'] != '':
+                item_data['salary_to'] = int(item_data['salary_to'])
             else:
-                salary_to = None
+                item_data['salary_to'] = None
 
-            salary_currency = ''
             if 'руб.' in salary:
-                salary_currency = 'руб.'
+                item_data['salary_currency'] = 'руб.'
             elif 'USD' in salary:
-                salary_currency = 'USD'
+                item_data['salary_currency'] = 'USD'
             elif 'EUR' in salary:
-                salary_currency = 'EUR'
+                item_data['salary_currency'] = 'EUR'
             else:
-                salary_currency = None
+                item_data['salary_currency'] = None
         else:
             salary_keyword = None
             salary_from = None
-            salary_to = None
-            salary_currency = None
+            item_data['salary_to'] = None
+            item_data['salary_currency'] = None
         snippet = item.find('div', {'data-qa': 'vacancy-serp__vacancy_snippet_responsibility'})
         if snippet != None:
-            snippet = snippet.getText()
+            item_data['snippet'] = snippet.getText()
         else:
-            snippet = None
-        site = base_url
-
-        item_data['link'] = link
+            item_data['snippet'] = None
+        item_data['site'] = base_url
         item_data['_id'] = int((re.search(r'\d{7,10}', item_data['link'])).group()) # Формирует id вакансии
-        item_data['title'] = title
-        item_data['company'] = company
-        item_data['location'] = location
-        item_data['salary_keyword'] = salary_keyword
-        item_data['salary_from'] = salary_from
-        item_data['salary_to'] = salary_to
-        item_data['salary_currency'] = salary_currency
-        item_data['snippet'] = snippet
-        item_data['site'] = site
+
         try:
             hhru.insert_one(item_data)
+            items_added += 1
         except DuplicateKeyError:
-            print('Document is already exist')
+            items_not_added += 1
 
     next_page_url = dom.find('a', {'data-qa': 'pager-next'})
     if next_page_url == None:
@@ -108,5 +102,7 @@ while True:
     items = dom.find_all('div', {'class': 'vacancy-serp-item vacancy-serp-item_redesigned'})
 
 for vac in hhru.find({}):
-    pprint(vac)
-
+    vac_len += 1
+print(f'In collection hhru {vac_len} objects')
+print(f'Added {items_added} objects')
+print(f'Don\'t added {items_not_added} objects')
