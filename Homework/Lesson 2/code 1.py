@@ -33,7 +33,7 @@ while True:
 
             salary_from = ''
             while True:
-                if salary[0].isdigit() == True:
+                if salary[0].isdigit():
                     salary_from = salary_from + salary[0]
                     salary = salary[1:]
                 else:
@@ -45,7 +45,7 @@ while True:
             salary_to = ''
             while True:
                 for char in salary:
-                    if char.isdigit() == True:
+                    if char.isdigit():
                         salary_to = salary_to + char
                 break
             if salary_to != '':
@@ -68,11 +68,11 @@ while True:
             salary_to = None
             salary_currency = None
         snippet = item.find('div', {'data-qa': 'vacancy-serp__vacancy_snippet_responsibility'})
-        if snippet != None:
+        if snippet is not None:
             snippet = snippet.getText()
         else:
             snippet = None
-        site = base_url
+        item_data['site'] = base_url
 
         item_data['link'] = link
         item_data['title'] = title
@@ -83,12 +83,11 @@ while True:
         item_data['salary_to'] = salary_to
         item_data['salary_currency'] = salary_currency
         item_data['snippet'] = snippet
-        item_data['site'] = site
 
         items_list.append(item_data)
 
     next_page_url = dom.find('a', {'data-qa': 'pager-next'})
-    if next_page_url == None:
+    if next_page_url is None:
         break
     next_page_url = next_page_url['href']
     url = f'{base_url}{next_page_url}'
