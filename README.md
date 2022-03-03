@@ -23,3 +23,10 @@
 [Методичка](https://docs.google.com/document/d/1OvtCj78OpTQDOmfoTGHMIZ2x-UonCT-PYiyRJ9--IO8/edit)
 
 [Практическое задание](https://github.com/StandinNeon/GeekBrains-DataEngineering/tree/ParsingScrapy/Homework/Lesson%203)
+
+## - Урок 4. Парсинг HTML. XPath
+[Урок](https://gb.ru/lessons/218462)
+
+[Методичка](https://docs.google.com/document/d/1EptKAOCS2mjcBsGORzTFdUX_WnV1OxxrsJIZx_m-XPo/edit)
+
+[Практическое задание](https://github.com/StandinNeon/GeekBrains-DataEngineering/tree/ParsingScrapy/Homework/Lesson%204)
