@@ -1,6 +1,6 @@
 ## Урок 5. Selenium в Python
 
-[Mail.ru]()
+[Mail.ru](https://github.com/StandinNeon/GeekBrains-DataEngineering/blob/ParsingScrapy/Homework/Lesson%205/code.py)
 
 ### Вариант 1 Написать программу, которая собирает входящие письма из своего или тестового почтового ящика и сложить данные о письмах в базу данных (от кого, дата отправки, тема письма, текст письма полный)
 
