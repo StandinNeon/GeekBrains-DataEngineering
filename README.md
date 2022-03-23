@@ -30,3 +30,10 @@
 [Методичка](https://docs.google.com/document/d/1EptKAOCS2mjcBsGORzTFdUX_WnV1OxxrsJIZx_m-XPo/edit)
 
 [Практическое задание](https://github.com/StandinNeon/GeekBrains-DataEngineering/tree/ParsingScrapy/Homework/Lesson%204)
+
+## - Урок 5. Selenium в Python
+[Урок](https://gb.ru/lessons/218463)
+
+[Методичка](https://gbcdn.mrgcdn.ru/uploads/asset/1941094/attachment/d8f41269ec410bc977856d8074abc079.pdf)
+
+[Практическое задание](https://github.com/StandinNeon/GeekBrains-DataEngineering/tree/ParsingScrapy/Homework/Lesson%205)
