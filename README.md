@@ -37,3 +37,17 @@
 [Методичка](https://gbcdn.mrgcdn.ru/uploads/asset/1941094/attachment/d8f41269ec410bc977856d8074abc079.pdf)
 
 [Практическое задание](https://github.com/StandinNeon/GeekBrains-DataEngineering/tree/ParsingScrapy/Homework/Lesson%205)
+
+## - Урок 6. Фреймворк Scrapy. Знакомство
+[Урок](https://gb.ru/lessons/218464)
+
+[Методичка](https://gbcdn.mrgcdn.ru/uploads/asset/1737037/attachment/c3f2774462c03f4df1f431cde5e4e050.pdf)
+
+[Практическое задание](https://github.com/StandinNeon/GeekBrains-DataEngineering/tree/ParsingScrapy/Homework/Lesson%206)
+
+## - Урок 7. Фреймворк Scrapy. Скачивание файлов и фото
+[Урок](https://gb.ru/lessons/218465)
+
+[Методичка](https://gbcdn.mrgcdn.ru/uploads/asset/1737037/attachment/c3f2774462c03f4df1f431cde5e4e050.pdf)
+
+[Практическое задание](https://github.com/StandinNeon/GeekBrains-DataEngineering/tree/ParsingScrapy/Homework/Lesson%207)
